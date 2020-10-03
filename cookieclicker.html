@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+
+<html lang = "en">
+  <head>
+    <title>Cookie Clicker</title>
+    <script>
+      let cookie = 0
+      function increment(){
+        cookie+=1;
+        document.querySelector('#display').innerHTML = cookie;
+      }
+    </script>
+  </head>
+  <body>
+    <form onsubmit = "increment(); return false;">
+      <input type = "submit" value = "Cookie">
+    </form>
+    <div id = "display">
+      0
+    </div>
+  </body>
+</html>
