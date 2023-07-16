@@ -4,6 +4,7 @@
     import "@fontsource/ubuntu/700.css";
     import "@fontsource-variable/eb-garamond";
     import { page } from "$app/stores";
+    import Layout from "$lib/Layout.svelte";
     import Link from "$lib/Link.svelte";
     import FlyInOut from "$lib/FlyInOut.svelte";
     import Footer from "$lib/Footer.svelte";
@@ -35,36 +36,27 @@
     };
 </script>
 
-<div
-    style="min-height: 100vh; display: flex; justify-content: space-between; flex-direction: column"
->
-    <div>
-        <header>
-            <a id="name" href="/" on:click={getNavTrigger("/")}>Maxwell Jiang</a
-            >
-            <nav>
-                {#each sitePages as sitePage (sitePage.href)}
-                    {@const selected = $page.route.id === sitePage.href}
-                    <Link
-                        on:click={getNavTrigger(sitePage.href)}
-                        href={sitePage.href}
-                        {selected}>{sitePage.title}</Link
-                    >
-                {/each}
-            </nav>
-        </header>
-
-        <main>
-            <FlyInOut
-                ready={contentReady}
-                onOutroEnd={() => (contentReady = true)}
-            >
-                <slot />
-            </FlyInOut>
-        </main>
-    </div>
-    <Footer />
-</div>
+<Layout>
+    <header slot="header">
+        <a id="name" href="/" on:click={getNavTrigger("/")}>Maxwell Jiang</a>
+        <nav>
+            {#each sitePages as sitePage (sitePage.href)}
+                {@const selected = $page.route.id === sitePage.href}
+                <Link
+                    on:click={getNavTrigger(sitePage.href)}
+                    href={sitePage.href}
+                    {selected}>{sitePage.title}</Link
+                >
+            {/each}
+        </nav>
+    </header>
+    <main slot="main">
+        <FlyInOut ready={contentReady} onOutroEnd={() => (contentReady = true)}>
+            <slot />
+        </FlyInOut>
+    </main>
+    <Footer slot="footer" />
+</Layout>
 
 <style>
     :global(:root) {
