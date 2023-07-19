@@ -39,6 +39,7 @@
 <Layout>
     <header slot="header">
         <a id="name" href="/" on:click={getNavTrigger("/")}>Maxwell Jiang</a>
+        <span>&bullet;</span>
         <nav>
             {#each sitePages as sitePage (sitePage.href)}
                 {@const selected = $page.route.id === sitePage.href}
@@ -114,8 +115,8 @@
         padding: var(--xl) 0;
         box-sizing: border-box;
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+        align-items: baseline;
+        gap: var(--l);
     }
     header nav {
         display: flex;
