@@ -5,7 +5,7 @@
     import "@fontsource-variable/eb-garamond";
     import { page } from "$app/stores";
     import Layout from "$lib/Layout.svelte";
-    import Link from "$lib/Link.svelte";
+    import NavLink from "$lib/NavLink.svelte";
     import FlyInOut from "$lib/FlyInOut.svelte";
     import Footer from "$lib/Footer.svelte";
     const sitePages = [
@@ -42,10 +42,10 @@
         <nav>
             {#each sitePages as sitePage (sitePage.href)}
                 {@const selected = $page.route.id === sitePage.href}
-                <Link
+                <NavLink
                     on:click={getNavTrigger(sitePage.href)}
                     href={sitePage.href}
-                    {selected}>{sitePage.title}</Link
+                    {selected}>{sitePage.title}</NavLink
                 >
             {/each}
         </nav>
@@ -74,6 +74,8 @@
         --xxl: 40px;
         --xxxl: 48px;
 
+        --serif: "EB Garamond Variable", serif;
+        --sans-serif: "Ubuntu", sans-serif;
         --content-width: 900px;
         --background-color: #f6f5e6;
         --footer-background-color: #3eb05e;
@@ -82,17 +84,28 @@
         margin: 0;
         color: var(--off-black);
         background-color: var(--background-color);
-        font-family: "Ubuntu", sans-serif;
+        font-family: var(--sans-serif);
+    }
+    :global(h1, h2, h3, h4) {
+        font-weight: 400;
+    }
+    :global(li, p) {
+        font-weight: 300;
+        line-height: 1.3;
+        letter-spacing: 0.01em;
     }
     :global(a) {
         color: inherit;
-        text-decoration: none;
+    }
+    :global(.text-link) {
+        text-underline-offset: var(--xxs);
     }
     #name {
         color: black;
         font-size: var(--xl);
         font-weight: 700;
-        font-family: "EB Garamond Variable", serif;
+        font-family: var(--serif);
+        text-decoration: none;
     }
     header {
         margin: auto;
@@ -113,8 +126,5 @@
         margin: auto;
         width: 100%;
         max-width: var(--content-width);
-    }
-    :global(h1, h2, h3, h4) {
-        font-weight: 400;
     }
 </style>

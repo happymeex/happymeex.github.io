@@ -124,9 +124,7 @@
         justify-content: space-between;
     }
     li {
-        line-height: 1.3;
         font-weight: 300;
-        letter-spacing: 0.01em;
     }
     .resume-section-header {
         border-bottom: 1px solid var(--light-gray);

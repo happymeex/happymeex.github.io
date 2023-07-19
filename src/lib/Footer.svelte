@@ -28,7 +28,7 @@
         width: 100%;
         background-color: var(--footer-background-color);
         box-sizing: border-box;
-        padding: var(--l) var(--m) var(--xl);
+        padding: var(--l) var(--m) 100px;
         margin: auto;
         margin-bottom: 0;
         margin-top: 80px;

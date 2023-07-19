@@ -7,6 +7,8 @@
 
 <style>
     a {
+        text-decoration: none;
+        color: inherit;
         opacity: 70%;
         position: relative;
     }
