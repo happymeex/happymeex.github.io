@@ -123,9 +123,6 @@
         display: flex;
         justify-content: space-between;
     }
-    li {
-        font-weight: 300;
-    }
     .resume-section-header {
         border-bottom: 1px solid var(--light-gray);
     }
