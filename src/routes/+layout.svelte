@@ -1,8 +1,6 @@
 <script lang="ts">
-    import "@fontsource/ubuntu/300.css";
-    import "@fontsource/ubuntu/400.css";
-    import "@fontsource/ubuntu/700.css";
     import "@fontsource-variable/eb-garamond";
+    import "@fontsource-variable/nunito-sans";
     import { page } from "$app/stores";
     import Layout from "$lib/Layout.svelte";
     import NavLink from "$lib/NavLink.svelte";
@@ -76,7 +74,7 @@
         --xxxl: 48px;
 
         --serif: "EB Garamond Variable", serif;
-        --sans-serif: "Ubuntu", sans-serif;
+        --sans-serif: "Nunito Sans Variable", sans-serif;
         --content-width: 900px;
         --background-color: #f6f5e6;
         --footer-background-color: #80ba7b;
@@ -105,7 +103,8 @@
         color: black;
         font-size: var(--xl);
         font-weight: 700;
-        font-family: var(--serif);
+        letter-spacing: -0.01em;
+        font-family: var(--sans-serif);
         text-decoration: none;
     }
     header {

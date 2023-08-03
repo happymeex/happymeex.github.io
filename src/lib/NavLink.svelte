@@ -11,6 +11,7 @@
         color: inherit;
         opacity: 70%;
         position: relative;
+        font-weight: 700;
     }
     a:hover {
         opacity: 100%;

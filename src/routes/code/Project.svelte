@@ -44,7 +44,6 @@
     }
     .title {
         font-weight: bold;
-        font-family: var(--serif);
     }
     .date {
         color: var(--gray);

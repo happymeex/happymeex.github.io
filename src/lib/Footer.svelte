@@ -28,11 +28,14 @@
         width: 100%;
         background-color: var(--footer-background-color);
         box-sizing: border-box;
-        padding: var(--l) var(--m) 50px;
+        padding: var(--l) var(--m) 40px;
         margin-bottom: 0;
         margin-top: 80px;
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+    p {
+        font-size: var(--m);
     }
 </style>
