@@ -4,35 +4,28 @@
     import Github from "$lib/icons/Github.svelte";
     import Twitter from "$lib/icons/Twitter.svelte";
     import LinkedIn from "$lib/icons/LinkedIn.svelte";
-    import ContactBar from "./ContactBar.svelte";
 
     const icons = [
+        { icon: Email, href: "mailto:maxwell.d.jiang@gmail.com" },
+        { icon: Github, href: "https://github.com/happymeex" },
         { icon: Instagram, href: "https://www.instagram.com/happy_meex/" },
         { icon: Twitter, href: "https://twitter.com/EC_Matrix" },
         {
             icon: LinkedIn,
             href: "https://www.linkedin.com/in/maxwell-jiang-3964531b9/",
         },
-        { icon: Github, href: "https://github.com/happymeex" },
-        { icon: Email, href: "mailto:maxwell.d.jiang@gmail.com" },
     ];
 </script>
 
-<footer>
-    <ContactBar />
-    <p>&copy; 2023 Maxwell Jiang</p>
-</footer>
+<aside>
+    {#each icons as { icon, href }}
+        <a {href} target="_blank"><svelte:component this={icon} /></a>
+    {/each}
+</aside>
 
 <style>
-    footer {
-        width: 100%;
-        background-color: var(--footer-background-color);
-        box-sizing: border-box;
-        padding: var(--l) var(--m) 50px;
-        margin-bottom: 0;
-        margin-top: 80px;
+    aside {
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        gap: var(--xs);
     }
 </style>

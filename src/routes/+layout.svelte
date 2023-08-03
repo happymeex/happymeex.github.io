@@ -79,7 +79,7 @@
         --sans-serif: "Ubuntu", sans-serif;
         --content-width: 900px;
         --background-color: #f6f5e6;
-        --footer-background-color: #3eb05e;
+        --footer-background-color: #80ba7b;
     }
     :global(body) {
         margin: 0;
