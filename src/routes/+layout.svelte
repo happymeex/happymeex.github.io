@@ -93,6 +93,9 @@
         line-height: 1.3;
         letter-spacing: 0.01em;
     }
+    :global(p) {
+        font-size: 20px;
+    }
     :global(a) {
         color: inherit;
     }
