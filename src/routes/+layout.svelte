@@ -105,11 +105,13 @@
     }
     :global(.text-link) {
         text-underline-offset: var(--xxs);
-        transition: 0.25s;
+        transition: 0.2s;
+        text-decoration-color: var(--light-gray);
     }
     :global(.text-link:hover) {
-        transition: 0.25s;
+        transition: 0.2s;
         color: black;
+        filter: brightness(0.7);
     }
     #name {
         color: black;

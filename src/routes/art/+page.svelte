@@ -30,6 +30,7 @@
 <p>
     In the future, I may decide to make a separate website dedicated to my art,
     but for now enjoy a sampling of my work below. You can also find me on <a
+        class="text-link"
         href={IG_URL}
         target="_blank">Instagram</a
     >.
