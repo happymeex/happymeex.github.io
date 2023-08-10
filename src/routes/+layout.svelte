@@ -73,6 +73,7 @@
         --xxl: 40px;
         --xxxl: 48px;
 
+        --text-font: 18px;
         --serif: "EB Garamond Variable", serif;
         --sans-serif: "Nunito Sans Variable", sans-serif;
         --content-width: 900px;
@@ -97,13 +98,18 @@
         text-align: justify;
         hyphens: auto;
         overflow-wrap: anywhere;
-        font-size: 20px;
+        font-size: var(--text-font);
     }
     :global(a) {
         color: inherit;
     }
     :global(.text-link) {
         text-underline-offset: var(--xxs);
+        transition: 0.25s;
+    }
+    :global(.text-link:hover) {
+        transition: 0.25s;
+        color: black;
     }
     #name {
         color: black;
