@@ -94,6 +94,9 @@
         letter-spacing: 0.01em;
     }
     :global(p) {
+        text-align: justify;
+        hyphens: auto;
+        overflow-wrap: anywhere;
         font-size: 20px;
     }
     :global(a) {
