@@ -13,7 +13,7 @@
         <h3 class="date">{date}</h3>
     </header>
     <main>
-        <article>
+        <article class="description-holder">
             {#each description as paragraph}
                 <p class="description">
                     {@html paragraph}
@@ -40,7 +40,7 @@
 <style>
     :root {
         --image-width: 300px;
-        --image-height: 150px;
+        --image-height: 180px;
     }
     .title {
         font-weight: bold;
@@ -67,9 +67,12 @@
     .description {
         margin-top: 0;
     }
+    .description-holder {
+        flex-basis: 60%;
+    }
     .image-holder {
-        min-width: var(--image-width);
-        min-height: var(--image-height);
+        flex-basis: var(--image-width);
+        height: var(--image-height);
         overflow: hidden;
         position: relative;
         border-radius: var(--xs);
@@ -80,10 +83,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: var(--image-width);
         height: var(--image-height);
-        min-height: 100%;
-        min-width: 100%;
     }
     .link-holder {
         display: flex;
