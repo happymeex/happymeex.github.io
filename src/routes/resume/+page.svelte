@@ -4,7 +4,9 @@
             position: "Software intern at Autodesk",
             dates: "Summer 2023",
             description: [
-                "Worked on and with the Autodesk's UI toolkit for Fusion 360.",
+                "Developed Autodesk's Web UI toolkit.",
+                "Built web app using toolkit to establish usage and best-practices example for Autodesk developers.",
+                "Built microfrontend proof-of-concept apps for web components team.",
             ],
         },
         {
@@ -52,6 +54,7 @@
         },
     ];
     const awards = [
+        { title: "Neo Scholar Finalist", date: "2023" },
         { title: "Putnam Exam, Top 200", date: "2021" },
         {
             title: "USAJMO Honorable Mention, MOP Invitee",
@@ -63,7 +66,7 @@
 
 <section class="resume-section">
     <h2 class="resume-section-header">Education</h2>
-    <header style:margin-top="var(--s)">
+    <header>
         <h2>Massachusetts Institute of Technology</h2>
         <h3>Aug 2020 &mdash; May 2024 (Anticipated)</h3>
     </header>
@@ -93,7 +96,7 @@
     {#each workExperience as job}
         <section class="work-experience-entry">
             <header>
-                <h3>{job.position}</h3>
+                <h2>{job.position}</h2>
                 <h3>{job.dates}</h3>
             </header>
             <ul>
@@ -122,18 +125,19 @@
     header {
         display: flex;
         justify-content: space-between;
+        align-items: baseline;
     }
     .resume-section-header {
         border-bottom: 1px solid var(--light-gray);
     }
     .resume-section header {
-        margin-bottom: var(--s);
+        margin: var(--s) 0;
     }
     .resume-section:not(:first-of-type) {
         margin-top: var(--l);
     }
     .work-experience-entry {
-        margin-top: var(--m);
+        margin-top: var(--s);
     }
     .award-entry {
         margin-top: var(--xs);

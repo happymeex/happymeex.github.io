@@ -7,10 +7,11 @@
         <p class="headline">
             Currently, I'm a senior at MIT double-majoring in math and computer
             science. In the past, I've been a software engineering intern, a
-            math researcher, and a painter.
+            math researcher, and a painter. Regarding my work, I care a lot
+            about <i>elegance</i>,
+            <i>clarity</i>, and <i>flow</i>.
         </p>
         <p class="headline">
-            I care a lot about <i>elegance</i>, <i>clarity</i>, and <i>flow</i>.
             Feel free to reach out, especially if anything I like or do
             resonates with you, too!
         </p>
@@ -44,7 +45,7 @@
         grid-area: headshot;
         width: 16em;
         border-radius: 50%;
-        margin-left: var(--l);
+        margin-left: var(--xl);
     }
     b {
         font-weight: 600;
