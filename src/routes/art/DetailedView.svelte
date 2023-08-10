@@ -2,6 +2,7 @@
     import { createEventDispatcher } from "svelte";
     import { fade } from "svelte/transition";
     export let images: Array<{ file: string; alt: string }>;
+    /** Index of image user clicked initially to open the large view. If `null`, viewer is closed. */
     export let imageIndex: number | null;
 
     let displacement = 0;
@@ -20,9 +21,29 @@
         displacement += dir;
     }
 
+    function handleKeyDown(e: KeyboardEvent) {
+        if (imageIndex === null) return;
+        switch (e.key) {
+            case "Escape":
+                closeModal();
+                break;
+            case "ArrowLeft":
+                if (imageIndex + displacement > 0) handleNav(-1);
+                break;
+            case "ArrowRight":
+                if (imageIndex + displacement < images.length - 1) handleNav(1);
+                break;
+        }
+    }
+
     $: {
-        // reset displacement whenever user opens modal
-        if (imageIndex !== null) displacement = 0;
+        if (imageIndex !== null) {
+            // execute whenever user opens modal
+            displacement = 0;
+            window.addEventListener("keydown", handleKeyDown);
+        } else {
+            window.removeEventListener("keydown", handleKeyDown);
+        }
     }
 
     $: index = imageIndex !== null ? imageIndex + displacement : null;
