@@ -12,6 +12,7 @@
         opacity: 70%;
         position: relative;
         font-weight: 700;
+        transition: 0.15s;
     }
     a:hover {
         opacity: 100%;
