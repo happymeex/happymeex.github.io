@@ -37,7 +37,7 @@
 <Layout>
     <header slot="header">
         <a id="name" href="/" on:click={getNavTrigger("/")}>Maxwell Jiang</a>
-        <span>&bullet;</span>
+        <span style="color: var(--gray)">&bullet;</span>
         <nav>
             {#each sitePages as sitePage (sitePage.href)}
                 {@const selected = $page.route.id === sitePage.href}

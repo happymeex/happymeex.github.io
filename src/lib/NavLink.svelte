@@ -6,17 +6,20 @@
 <a class:selected {href} on:click><slot /></a>
 
 <style>
+    :root {
+        --transition-time: 0.2s;
+    }
     a {
         text-decoration: none;
         color: inherit;
         opacity: 70%;
         position: relative;
         font-weight: 700;
-        transition: 0.15s;
+        transition: var(--transition-time);
     }
     a:hover {
         opacity: 100%;
-        transition: 0.15s ease;
+        transition: var(--transition-time) ease;
     }
     a::before {
         position: absolute;
@@ -28,7 +31,7 @@
         height: 2px;
         transform-origin: top right;
         transform: scaleX(0);
-        transition: transform 0.15s ease;
+        transition: transform var(--transition-time) ease;
     }
     a:hover::before {
         transform-origin: top left;
