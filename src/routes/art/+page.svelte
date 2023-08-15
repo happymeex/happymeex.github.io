@@ -1,8 +1,14 @@
 <script lang="ts">
+    import { onMount } from "svelte";
     import Ornament from "$lib/Ornament.svelte";
     import DetailedView from "./DetailedView.svelte";
+    import { screenMode } from "$lib/stores";
+
+    let isMounted = false;
+    onMount(() => (isMounted = true));
+    $: isDesktop = isMounted && $screenMode === "desktop";
+
     const IG_URL = "https://instagram.com/happy_meex";
-    const NUM_COLUMNS = 2;
     const images = [
         { file: "horimiya.png", alt: "Man giving candy illustration" },
         { file: "xiao.png", alt: "Asian village nighttime illustration" },
@@ -13,11 +19,23 @@
         { file: "hobie.png", alt: "Hobie Brown fan art" },
         { file: "homura.jpg", alt: "Homura fan art" },
     ];
-    const columns: { file: string; alt: string }[][] = [];
+    let NUM_COLUMNS = 2;
+    let columns: { file: string; alt: string }[][] = [];
     const numImages = images.length;
-    const numPerCol = Math.ceil(numImages / NUM_COLUMNS);
-    for (let i = 0; i < NUM_COLUMNS; i++) {
-        columns.push(images.slice(i * numPerCol, (i + 1) * numPerCol));
+    let numPerCol = Math.ceil(numImages / NUM_COLUMNS);
+    $: {
+        // checking mounted status redundantly to prevent split-second 1-col render on desktop
+        if (isMounted) {
+            if (isDesktop) NUM_COLUMNS = 2;
+            else NUM_COLUMNS = 1;
+        }
+    }
+    $: {
+        columns = [];
+        numPerCol = Math.ceil(numImages / NUM_COLUMNS);
+        for (let i = 0; i < NUM_COLUMNS; i++) {
+            columns.push(images.slice(i * numPerCol, (i + 1) * numPerCol));
+        }
     }
 
     let imageIndex: number | null = null;
@@ -43,14 +61,19 @@
     {#each columns as col, i}
         <div class="column">
             {#each col as { file, alt }, j}
-                <button on:click={() => (imageIndex = i * numPerCol + j)}>
+                <button
+                    on:click={() => (imageIndex = i * numPerCol + j)}
+                    disabled={!isDesktop}
+                >
                     <img src={`/art/${file}`} {alt} />
                 </button>
             {/each}
         </div>
     {/each}
 </div>
-<DetailedView {images} {imageIndex} on:close={() => (imageIndex = null)} />
+{#if isDesktop}
+    <DetailedView {images} {imageIndex} on:close={() => (imageIndex = null)} />
+{/if}
 
 <style>
     button {
