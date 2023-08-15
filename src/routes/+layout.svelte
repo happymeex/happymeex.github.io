@@ -77,9 +77,8 @@
         --serif: "EB Garamond Variable", serif;
         --sans-serif: "Nunito Sans Variable", sans-serif;
         --content-width: 900px;
-        --background-color: #f6f5e6;
+        --background-color: #f9f9f3;
         --separator-color: var(--off-black);
-        --separator-width: 200px;
     }
     :global(body) {
         margin: 0;

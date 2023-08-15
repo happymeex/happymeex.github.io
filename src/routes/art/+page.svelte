@@ -56,7 +56,7 @@
     </p>
 </section>
 <div style="margin-top: var(--l)">
-    <Ornament width="var(--separator-width)" color="var(--separator-color)" />
+    <Ornament />
 </div>
 <div id="image-container" style={`--num-columns: ${NUM_COLUMNS}`}>
     {#each columns as col, i}

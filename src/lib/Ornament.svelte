@@ -1,5 +1,5 @@
 <script lang="ts">
-    export let width: string = "var(--separator-width)";
+    export let width: string = "200px";
     export let color: string = "var(--separator-color)";
     export let isSeparator: boolean = true;
 </script>
