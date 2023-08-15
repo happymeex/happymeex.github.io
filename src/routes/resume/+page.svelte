@@ -66,7 +66,7 @@
 
 <section class="resume-section">
     <h2 class="resume-section-header">Education</h2>
-    <header>
+    <header class="title-and-date">
         <h2>Massachusetts Institute of Technology</h2>
         <h3>Aug 2020 &mdash; May 2024 (Anticipated)</h3>
     </header>
@@ -95,7 +95,7 @@
     <h2 class="resume-section-header">Work Experience</h2>
     {#each workExperience as job}
         <section class="work-experience-entry">
-            <header>
+            <header class="title-and-date">
                 <h2>{job.position}</h2>
                 <h3>{job.dates}</h3>
             </header>
@@ -147,5 +147,11 @@
     h4,
     ul {
         margin: 0;
+    }
+    @media (max-width: 768px) {
+        .title-and-date {
+            display: flex;
+            flex-direction: column;
+        }
     }
 </style>
