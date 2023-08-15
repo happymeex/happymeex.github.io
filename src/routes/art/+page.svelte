@@ -5,9 +5,7 @@
     import { screenMode } from "$lib/stores";
     import Seo from "$lib/Seo.svelte";
 
-    let isMounted = false;
-    onMount(() => (isMounted = true));
-    $: isDesktop = isMounted && $screenMode === "desktop";
+    $: isDesktop = $screenMode === "desktop";
 
     const IG_URL = "https://instagram.com/happy_meex";
     const images = [
@@ -25,11 +23,8 @@
     const numImages = images.length;
     let numPerCol = Math.ceil(numImages / NUM_COLUMNS);
     $: {
-        // checking mounted status redundantly to prevent split-second 1-col render on desktop
-        if (isMounted) {
-            if (isDesktop) NUM_COLUMNS = 2;
-            else NUM_COLUMNS = 1;
-        }
+        if (isDesktop) NUM_COLUMNS = 2;
+        else NUM_COLUMNS = 1;
     }
     $: {
         columns = [];
