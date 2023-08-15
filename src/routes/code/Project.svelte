@@ -88,4 +88,12 @@
         display: flex;
         gap: var(--s);
     }
+    @media (max-width: 768px) {
+        .image-holder {
+            display: none;
+        }
+        .description-holder {
+            flex-basis: 100%;
+        }
+    }
 </style>
