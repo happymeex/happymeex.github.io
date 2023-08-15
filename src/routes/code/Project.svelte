@@ -62,7 +62,6 @@
     section {
         display: flex;
         flex-direction: column;
-        margin: var(--xl) 0;
     }
     .description {
         margin-top: 0;

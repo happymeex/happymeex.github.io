@@ -52,11 +52,24 @@
     ];
 </script>
 
-<p>
-    Here are some projects I've worked on. Feel free to reach out with questions
-    or ideas!
-</p>
+<div class="description">
+    <p>
+        Here are some projects I've worked on. Feel free to reach out with
+        questions or ideas!
+    </p>
+</div>
 <Ornament />
-{#each projects as project}
-    <Project {...project} />
+{#each projects as project, i}
+    <div class="project-container" data-index={i}>
+        <Project {...project} />
+    </div>
 {/each}
+
+<style>
+    .description {
+        margin-bottom: var(--xl);
+    }
+    .project-container:not([data-index="0"]) {
+        margin-top: var(--xxl);
+    }
+</style>
