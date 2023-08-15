@@ -37,7 +37,7 @@
 <Layout>
     <header slot="header">
         <a id="name" href="/" on:click={getNavTrigger("/")}>Maxwell Jiang</a>
-        <span style="color: var(--gray)">&bullet;</span>
+        <span class="header-bullet">&bullet;</span>
         <nav>
             {#each sitePages as sitePage (sitePage.href)}
                 {@const selected = $page.route.id === sitePage.href}
@@ -132,6 +132,9 @@
         align-items: baseline;
         gap: var(--l);
     }
+    .header-bullet {
+        color: var(--gray);
+    }
     header nav {
         display: flex;
         gap: var(--xl);
@@ -141,5 +144,17 @@
         margin: auto;
         width: 100%;
         max-width: var(--content-width);
+    }
+    @media (max-width: 768px) {
+        main {
+            width: 90vw;
+        }
+        .header-bullet {
+            display: none;
+        }
+        header {
+            flex-direction: column;
+            align-items: center;
+        }
     }
 </style>
