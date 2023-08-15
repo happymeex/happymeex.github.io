@@ -1,9 +1,13 @@
 <script lang="ts">
-    import { createEventDispatcher } from "svelte";
+    import { createEventDispatcher, onMount } from "svelte";
     import { fade } from "svelte/transition";
     export let images: Array<{ file: string; alt: string }>;
     /** Index of image user clicked initially to open the large view. If `null`, viewer is closed. */
     export let imageIndex: number | null;
+
+    let isMounted = false; // use this flag to separate SSR from CSR
+
+    onMount(() => (isMounted = true));
 
     let displacement = 0;
     const dispatch = createEventDispatcher();
@@ -40,8 +44,8 @@
         if (imageIndex !== null) {
             // execute whenever user opens modal
             displacement = 0;
-            window.addEventListener("keydown", handleKeyDown);
-        } else {
+            if (isMounted) window.addEventListener("keydown", handleKeyDown);
+        } else if (isMounted) {
             window.removeEventListener("keydown", handleKeyDown);
         }
     }
