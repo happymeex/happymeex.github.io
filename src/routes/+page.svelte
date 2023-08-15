@@ -8,12 +8,14 @@
             Currently, I'm a senior at MIT double-majoring in math and computer
             science. In the past, I've been a software engineering intern, a
             math researcher, and a painter. Regarding my work, I care a lot
-            about <i>elegance</i>,
-            <i>clarity</i>, and <i>flow</i>.
+            about <i>elegance</i> and <i>clarity</i>.
         </p>
         <p class="headline">
-            Feel free to reach out, especially if anything I like or do
-            resonates with you, too!
+            Feel free to <a
+                class="text-link"
+                href="mailto:maxwell.d.jiang@gmail.com"
+                target="_blank">reach out</a
+            >, especially if anything I like or do resonates with you, too!
         </p>
     </div>
     <img id="headshot" src="/headshot.jpg" alt="Headshot of Maxwell" />
