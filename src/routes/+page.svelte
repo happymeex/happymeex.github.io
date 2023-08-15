@@ -18,7 +18,9 @@
             >, especially if anything I like or do resonates with you, too!
         </p>
     </div>
-    <img id="headshot" src="/headshot.jpg" alt="Headshot of Maxwell" />
+    <div id="headshot-container">
+        <img src="/headshot.jpg" alt="Headshot of Maxwell" />
+    </div>
 </section>
 
 <style>
@@ -43,13 +45,26 @@
     .headline {
         font-size: 20px;
     }
-    #headshot {
+    #headshot-container {
         grid-area: headshot;
+        margin-left: var(--xl);
+        display: flex;
+        justify-content: center;
+    }
+    #headshot-container img {
         width: 16em;
         border-radius: 50%;
-        margin-left: var(--xl);
     }
     b {
         font-weight: 600;
+    }
+    @media (max-width: 768px) {
+        section {
+            grid-template: "headshot" "text-wrapper";
+        }
+        #headshot-container {
+            margin-left: 0;
+            margin-bottom: var(--xl);
+        }
     }
 </style>
