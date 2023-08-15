@@ -1,3 +1,8 @@
+<script lang="ts">
+    import Seo from "$lib/Seo.svelte";
+</script>
+
+<Seo title="Maxwell Jiang" />
 <section>
     <div id="text-wrapper">
         <p class="headline">

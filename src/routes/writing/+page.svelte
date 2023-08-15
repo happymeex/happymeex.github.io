@@ -1,4 +1,6 @@
 <script lang="ts">
+    import Seo from "$lib/Seo.svelte";
+
     const MATH = [
         {
             title: "Generalizations of Knotoids and Spatial Graphs",
@@ -28,17 +30,20 @@
     ];
 </script>
 
-<p>
-    A blog is forthcoming! In the meantime, you can take a look at some math
-    I've written:
-</p>
-<ul>
-    {#each MATH as { title, href, description }}
-        <li>
-            <a class="text-link" {href} target="_blank">{title}</a>: {@html description}
-        </li>
-    {/each}
-</ul>
+<Seo title={"Maxwell Jiang \u2013 Writing"} />
+<section>
+    <p>
+        A blog is forthcoming! In the meantime, you can take a look at some math
+        I've written:
+    </p>
+    <ul>
+        {#each MATH as { title, href, description }}
+            <li>
+                <a class="text-link" {href} target="_blank">{title}</a>: {@html description}
+            </li>
+        {/each}
+    </ul>
+</section>
 
 <style>
     li {

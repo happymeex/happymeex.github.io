@@ -1,4 +1,5 @@
 <script lang="ts">
+    import Seo from "$lib/Seo.svelte";
     const workExperience = [
         {
             position: "Software intern at Autodesk",
@@ -64,6 +65,7 @@
     ];
 </script>
 
+<Seo title={"Maxwell Jiang \u2013 Resume"} />
 <section class="resume-section">
     <h2 class="resume-section-header">Education</h2>
     <header class="title-and-date">

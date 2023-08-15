@@ -3,6 +3,7 @@
     import twisearch from "$lib/images/twisearch.png";
     import taletree from "$lib/images/taletree.png";
     import Ornament from "$lib/Ornament.svelte";
+    import Seo from "$lib/Seo.svelte";
     const projects = [
         {
             title: "Inn Searcher",
@@ -52,12 +53,13 @@
     ];
 </script>
 
-<div class="description">
+<Seo title={"Maxwell Jiang \u2013 Code"} />
+<section class="description">
     <p>
         Here are some projects I've worked on. Feel free to reach out with
         questions or ideas!
     </p>
-</div>
+</section>
 <Ornament />
 {#each projects as project, i}
     <div class="project-container" data-index={i}>

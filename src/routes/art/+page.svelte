@@ -3,6 +3,7 @@
     import Ornament from "$lib/Ornament.svelte";
     import DetailedView from "./DetailedView.svelte";
     import { screenMode } from "$lib/stores";
+    import Seo from "$lib/Seo.svelte";
 
     let isMounted = false;
     onMount(() => (isMounted = true));
@@ -41,19 +42,19 @@
     let imageIndex: number | null = null;
 </script>
 
-<p>
-    I am a digital artist interested in illustration and concept art, mainly the
-    kind found in games and animation. In the past, I studied traditional oil
-    painting and sketching.
-</p>
-<p>
-    In the future, I may decide to make a separate website dedicated to my art,
-    but for now enjoy a sampling of my work below. You can also find me on <a
-        class="text-link"
-        href={IG_URL}
-        target="_blank">Instagram</a
-    >.
-</p>
+<Seo title={"Maxwell Jiang \u2013 Art"} />
+<section>
+    <p>
+        I am a digital artist interested in illustration and concept art, mainly
+        the kind found in games and animation. In the past, I studied
+        traditional oil painting and sketching.
+    </p>
+    <p>
+        In the future, I may decide to make a separate website dedicated to my
+        art, but for now enjoy a sampling of my work below. You can also find me
+        on <a class="text-link" href={IG_URL} target="_blank">Instagram</a>.
+    </p>
+</section>
 <div style="margin-top: var(--l)">
     <Ornament width="var(--separator-width)" color="var(--separator-color)" />
 </div>
