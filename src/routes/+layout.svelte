@@ -78,7 +78,8 @@
         --sans-serif: "Nunito Sans Variable", sans-serif;
         --content-width: 900px;
         --background-color: #f6f5e6;
-        --footer-background-color: #80ba7b;
+        --separator-color: var(--off-black);
+        --separator-width: 200px;
     }
     :global(body) {
         margin: 0;

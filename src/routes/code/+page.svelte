@@ -2,6 +2,7 @@
     import Project from "./Project.svelte";
     import twisearch from "$lib/images/twisearch.png";
     import taletree from "$lib/images/taletree.png";
+    import Ornament from "$lib/Ornament.svelte";
     const projects = [
         {
             title: "Inn Searcher",
@@ -55,6 +56,7 @@
     Here are some projects I've worked on. Feel free to reach out with questions
     or ideas!
 </p>
+<Ornament />
 {#each projects as project}
     <Project {...project} />
 {/each}

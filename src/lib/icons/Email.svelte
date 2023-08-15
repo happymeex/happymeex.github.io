@@ -1,5 +1,5 @@
 <svg
-    stroke="black"
+    stroke="var(--off-black)"
     fill="none"
     stroke-width="2"
     viewBox="0 0 24 24"

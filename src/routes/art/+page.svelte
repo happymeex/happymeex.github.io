@@ -1,4 +1,5 @@
 <script lang="ts">
+    import Ornament from "$lib/Ornament.svelte";
     import DetailedView from "./DetailedView.svelte";
     const IG_URL = "https://instagram.com/happy_meex";
     const NUM_COLUMNS = 2;
@@ -35,6 +36,9 @@
         target="_blank">Instagram</a
     >.
 </p>
+<div style="margin-top: var(--l)">
+    <Ornament width="var(--separator-width)" color="var(--separator-color)" />
+</div>
 <div id="image-container" style={`--num-columns: ${NUM_COLUMNS}`}>
     {#each columns as col, i}
         <div class="column">
@@ -58,7 +62,7 @@
     #image-container {
         --image-gap: var(--s);
 
-        margin-top: var(--xxl);
+        margin-top: var(--xl);
         display: flex;
         gap: var(--image-gap);
     }
