@@ -15,7 +15,7 @@
     />
     <meta
         property="og:image"
-        content="https://maxwelljiang.com/art/siblings.jpg"
+        content="https://www.maxwelljiang.com/art/siblings.jpg"
     />
     <meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
