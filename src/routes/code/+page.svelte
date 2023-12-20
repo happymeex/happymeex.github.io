@@ -2,9 +2,50 @@
     import Project from "./Project.svelte";
     import twisearch from "$lib/images/twisearch.png";
     import taletree from "$lib/images/taletree.png";
+    import gardenia from "$lib/images/gardenia.png";
+    import teapot from "$lib/images/teapot_watercolor.png";
     import Ornament from "$lib/Ornament.svelte";
     import Seo from "$lib/Seo.svelte";
     const projects = [
+        {
+            title: "Non-Photorealistic Renderer",
+            date: "Dec 2023",
+            description: [
+                "A CPU-based ray tracer for non-photorealistic rendering in cel shading and watercolor styles. \
+                Final project for MIT's 6.4400 Computer Graphics course, \
+                built in collaboration with Daniel Hu. This was runner-up for best project.",
+                "Written in C++ with OpenGL.",
+            ],
+            links: [
+                {
+                    label: "Github",
+                    href: "https://github.com/happymeex/npr-graphics",
+                },
+            ],
+            imageUrl: teapot,
+        },
+        {
+            title: "Gardenia",
+            date: "Aug 2023",
+            description: [
+                "A 2D platformer game about a shapeshifting forest-dweller who protects the woods from robots. \
+                Features single-player survival mode and multiplayer brawl mode. \
+                All art, animation, music, and design are my own. \
+                Aesthetic and gameplay inspired by Hollow Knight.",
+                "Built with Typescript, <a class='text-link' target='_blank' href='https://phaser.io/'>PhaserJS</a>, and Go.",
+            ],
+            links: [
+                {
+                    label: "Github",
+                    href: "https://github.com/happymeex/gardenia",
+                },
+                {
+                    label: "Deployment",
+                    href: "https://gardenia-production.up.railway.app/",
+                },
+            ],
+            imageUrl: gardenia,
+        },
         {
             title: "Inn Searcher",
             date: "May 2023",

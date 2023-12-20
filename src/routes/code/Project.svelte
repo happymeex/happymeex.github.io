@@ -72,17 +72,17 @@
     .image-holder {
         flex-basis: var(--image-width);
         height: var(--image-height);
-        overflow: hidden;
         position: relative;
-        border-radius: var(--xs);
-        box-shadow: 2px 2px 4px var(--light-gray);
     }
     .project-image {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        height: var(--image-height);
+        max-height: var(--image-height);
+        max-width: var(--image-width);
+        border-radius: var(--xs);
+        box-shadow: 2px 2px 4px var(--light-gray);
     }
     .link-holder {
         display: flex;
